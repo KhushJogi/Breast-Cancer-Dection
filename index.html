@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Detection</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+ <div class="login">
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <input type="text" name="radius_mean" placeholder="Enter radius_mean" required="required" />
+        <input type="text" name="perimeter_mean" placeholder="Enter perimeter_mean" required="required" />
+		<input type="text" name="area_mean" placeholder="Enter area_mean" required="required" />
+		<input type="text" name="concavity_mean" placeholder="Enter concavity_mean" required="required" />
+        <input type="text" name="concave_points_mean" placeholder="Enter concave points_mean" required="required" />
+        <input type="text" name="area_se" placeholder="Enter area_se" required="required" />
+        <input type="text" name="radius_worst" placeholder="Enter radius_worst" required="required" />
+        <input type="text" name="perimeter_worst" placeholder="Enter perimeter_worst" required="required" />
+        <input type="text" name="area_worst" placeholder="Enter area_worst" required="required" />
+        <input type="text" name="concave_points_worst" placeholder="Enter concave points_worst" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <div class="predict">
+   {{ prediction_text }}</div>
+ </div>
+
+
+</body>
+</html>
